@@ -10,7 +10,7 @@ export default function Home() {
     const [universities, setUniversities] = useState([])
 
     useEffect(() => {
-      fetch("http://localhost:5000/api/universities/")
+      fetch("http://localhost:5000/api/universities")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
