@@ -6,7 +6,9 @@ import { FilterIcon } from 'lucide-react'
 
 function Hero() {
   return (
-    <section className="bg-primary py-16 px-4 md:px-6">
+    <section className="bg-primary/75 bg-cover bg-center relative pt-44 py-28 px-4 md:px-6">
+        <div className='absolute w-full h-full top-0 left-0 bg-[url(https://www.brown.edu/sites/default/files/styles/ultrawide_med/public/2021-02/20181013_COMM_gigsgreen033.jpg?h=44198bf6&itok=Z9yQDrHL)] bg-cover bg-center -z-10'></div>
+
         <div className="container mx-auto max-w-4xl text-center">
         <h1 className="text-4xl font-bold text-primary-foreground mb-4">Find the <span className="text-secondary">Perfect University </span> for You</h1>
         <p className="text-lg text-primary-foreground mb-8">

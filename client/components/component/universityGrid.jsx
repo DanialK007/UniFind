@@ -6,7 +6,7 @@ function UniversityGrid({universities, title, number}) {
   return (
     <>
       {/* Universities */}
-      <section className="py-12 px-4 md:px-6">
+      <section className="py-12 px-4 md:px-6 min-h-[600px]">
           <div className="container mx-auto">
             <h2 className="text-2xl font-bold mb-8">{title}</h2>
             <div
@@ -18,6 +18,7 @@ function UniversityGrid({universities, title, number}) {
                     width={400}
                     height={225}
                     alt={`University`}
+                    loading='lazy'
                     className="rounded-t-md object-cover w-full aspect-[16/9] scale-105 group-hover:scale-100 duration-300" />
                   <CardContent className="p-4 flex flex-col h-full justify- between">
                     <div>

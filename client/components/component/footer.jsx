@@ -9,33 +9,34 @@ export function Footer() {
         className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
-            <UniversityIcon className="w-8 h-8 text-primary-foreground" />
-            <span className="text-xl font-bold">UniFind</span>
+            {/* <UniversityIcon className="w-8 h-8 text-primary-foreground" /> */}
+            <img src="https://png.pngtree.com/png-clipart/20211017/original/pngtree-university-logo-png-png-image_6855396.png" alt="" className='w-10 h-10'/>
+            <span className="text-2xl text-secondary font-bold">UniFind</span>
           </Link>
           <p className="text-primary-foreground">
             Discover the perfect university for you. Search our database of thousands of institutions worldwide.
           </p>
           <div className="flex items-center gap-4">
             <Link
-              href="#"
+              href="https://www.google.com"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <FacebookIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="#"
+              href="https://www.google.com"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <TwitterIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="#"
+              href="https://www.google.com"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <InstagramIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="#"
+              href="https://www.google.com"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <LinkedinIcon className="w-6 h-6" />

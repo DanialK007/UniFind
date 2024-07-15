@@ -28,8 +28,8 @@ export default function Home() {
       <Header />
       <Hero />
       <UniversityGrid universities={universities} number="8" title="Featured Universities" />
-      <BlogGrid blogs={blogs} number="3" />
-      <NewsGrid news={news} number="3" />
+      <BlogGrid blogs={blogs} number="3" title="Featured Blog Posts"/>
+      <NewsGrid news={news} number="3" title="Latest News"/>
       <Gallery imageGallery={universities} />
       <Footer />
     </>
