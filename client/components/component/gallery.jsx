@@ -70,7 +70,7 @@ const Gallery = ({ imageGallery }) => {
             {imageGalleryOpened && (
                 <>
                     <div
-                        className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50 cursor-zoom-out w-full h-full backdrop-blur-lg bg-primary-foreground/10"
+                        className="fixed inset-0 z-40 flex items-center justify-center cursor-zoom-out w-full h-full backdrop-blur-lg bg-primary-foreground/50 lg:bg-primary-foreground/10"
                     >
                         {/* Navigation Arrows */}
                         <button onClick={imageGalleryPrev} className="h-full group w-16 flex items-center justify-center z-50 left-0">
