@@ -3,7 +3,7 @@ const blogs = [
     id: 1,
     title: "The Rising Cost of College: Is Higher Education Becoming Unaffordable?",
     description: "Explore the factors contributing to the increasing cost of college tuition and its impact on students.",
-    photo: "https://www.thoughtco.com/thmb/nqn9FRGVhqeQyYQSLsPWrIp_dHw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/happy-student-in-paris-532854948-266abdb9e9b1449b918eb8fc0c96bde1.jpg"
+    photo: "https://www.shutterstock.com/image-photo/group-students-digital-tablet-laptop-600nw-2347371743.jpg"
   },
   {
     id: 2,

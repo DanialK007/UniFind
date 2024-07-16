@@ -5,12 +5,14 @@ import { universities } from "@/public/data"
 import Hero from "@/app/universities/hero"
 import { Footer } from "@/components/component/footer";
 import { useEffect, useState } from "react";
+import Gallery from "@/components/component/gallery";
 
 export default function Home() {
     const [universities, setUniversities] = useState([])
 
     useEffect(() => {
-      fetch("http://localhost:5000/api/universities")
+      // fetch("http://localhost:5000/api/universities")
+      fetch("https://unifind.onrender.com/api/universities")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -25,6 +27,7 @@ export default function Home() {
             <Header />
             <Hero />
             <UniversityGrid universities={universities} title="Universities" />
+            <Gallery imageGallery={universities} />
             <Footer />
         </>
     );

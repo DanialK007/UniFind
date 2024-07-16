@@ -20,9 +20,12 @@ function UniversityGrid({universities, title, number}) {
                     alt={`University`}
                     loading='lazy'
                     className="rounded-t-md object-cover w-full aspect-[16/9] scale-105 group-hover:scale-100 duration-300" />
-                  <CardContent className="p-4 flex flex-col h-full justify- between">
+                  <CardContent className="px-4 pt-3 flex flex-col h-full justify- between">
                     <div>
-                      <h3 className="text-xl font-bold mb-2">{uni.name}</h3>
+                      <h3 className="text-xl font-bold mb-2 flex">
+                        <img src={uni.logo} alt="" className='w-10 h-10 p-[2px] rounded-[100%] bg-[white] ms-2 me-4 scale-150 -translate-y-5'/>
+                        {uni.name}
+                      </h3>
                       <div className="text-muted-foreground mb-2 flex">
                         <School2Icon />
                         <div className="divide-x-2 divide-primary/40">

@@ -53,7 +53,7 @@ const Gallery = ({ imageGallery }) => {
             {/* Gallery */}
             <div className="mx-auto py-8">
                 <ul id="gallery" className="grid grid-cols-2 gap-5 lg:grid-cols-5">
-                    {imageGallery.map((image, index) => (
+                    {imageGallery.slice(0,15).map((image, index) => (
                         <li key={index} className='hover:scale-110 overflow-hidden group duration-300 rounded-lg hover:z-10'>
                             <img
                                 onClick={() => imageGalleryOpen(index)}
