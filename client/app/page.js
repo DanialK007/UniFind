@@ -10,8 +10,20 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [universities, setUniversities] = useState([])
+  const [filteredUniversities, setFilteredUniversities] = useState([]);
   const [news, setnews] = useState([])
   const [blogs, setblogs] = useState([])
+
+  const applyFilters = (searchQuery, locationFilter, programFilter) => {
+    const results = universities.filter((university) => {
+      return (
+        university.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        university.location.city.toLowerCase().includes(locationFilter.toLowerCase()) &&
+        university.programs.some(program => program.name.toLowerCase().includes(programFilter.toLowerCase()))
+      );
+    });
+    setFilteredUniversities(results);
+  };
 
   useEffect(() => {
     // fetch("http://localhost:5000/api/universities")
@@ -24,7 +36,7 @@ export default function Home() {
     })
     .catch((error) => console.error("Error: " + error));
 
-    //   fetch("http://localhost:5000/api/news")
+      // fetch("http://localhost:5000/api/news")
       fetch("https://unifind.onrender.com/api/news")
       .then((response) => response.json())
       .then((data) => {
@@ -34,7 +46,7 @@ export default function Home() {
       })
       .catch((error) => console.error("Error: " + error));
 
-    //   fetch("http://localhost:5000/api/blogs")
+      // fetch("http://localhost:5000/api/blogs")
       fetch("https://unifind.onrender.com/api/blogs")
       .then((response) => response.json())
       .then((data) => {
@@ -44,12 +56,12 @@ export default function Home() {
       })
       .catch((error) => console.error("Error: " + error));
     }, []);
-  
+
   return (
     <>
       <Header />
-      <Hero />
-      <UniversityGrid universities={universities} number="8" title="Featured Universities" />
+      <Hero universities={universities} applyFilters={applyFilters} />
+      <UniversityGrid universities={filteredUniversities.length > 0 ? filteredUniversities : universities} number="8" title="Featured Universities" />
       <BlogGrid blogs={blogs} number="3" title="Featured Blog Posts"/>
       <NewsGrid news={news} number="3" title="Latest News"/>
       <Gallery imageGallery={universities} />

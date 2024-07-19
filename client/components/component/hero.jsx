@@ -1,10 +1,32 @@
-import React from 'react'
-import { Input } from '../ui/input'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu'
-import { Button } from '../ui/button'
-import { FilterIcon } from 'lucide-react'
+"use client"
+import React, { useState } from 'react';
+import { Input } from '../ui/input';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
+import { Button } from '../ui/button';
+import { FilterIcon } from 'lucide-react';
 
-function Hero() {
+function Hero({ universities, applyFilters }) {
+    const [searchQuery, setSearchQuery] = useState('');
+    const [locationFilter, setLocationFilter] = useState('');
+    const [programFilter, setProgramFilter] = useState('');
+  
+    const handleSearchChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
+  
+    const handleLocationChange = (e) => {
+      setLocationFilter(e.target.value);
+    };
+  
+    const handleProgramChange = (e) => {
+      setProgramFilter(e.target.value);
+    };
+  
+    const handleApplyFilters = (e) => {
+        e.preventDefault(); // Prevent the default form submission
+        applyFilters(searchQuery, locationFilter, programFilter);
+      };
+
   return (
     <section className="bg-primary/75 bg-cover bg-center relative pt-44 py-28 px-4 md:px-6">
         <div className='absolute w-full h-full top-0 left-0 bg-[url(https://www.brown.edu/sites/default/files/styles/ultrawide_med/public/2021-02/20181013_COMM_gigsgreen033.jpg?h=44198bf6&itok=Z9yQDrHL)] bg-cover bg-center -z-10'></div>
@@ -15,53 +37,50 @@ function Hero() {
             Search for universities by location, program, and more.
         </p>
         <form
-            className="bg-primary-foreground rounded-md shadow-md p-4 flex items-center gap-4">
-            <Input
+            className="bg-primary-foreground rounded-md shadow-md p-4 flex items-center gap-4"
+            onSubmit={handleApplyFilters} // Attach the handler to the form's onSubmit event
+        >
+        <Input
             type="text"
             placeholder="Search universities..."
-            className="flex-1 bg-transparent border-none outline-none ring-0" />
-            <DropdownMenu>
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="flex-1 bg-transparent border-none outline-none ring-0"
+        />
+        <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-2">
+            <Button variant="ghost" className="flex items-center gap-2">
                 <FilterIcon className="h-5 w-5" />
                 <span>Filters</span>
-                </Button>
+            </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-64 p-4 bg-background text-foreground shadow-md">
-                <div className="grid gap-4">
+            <DropdownMenuContent className="w-64 p-4 bg-background rounded-lg shadow-xl text-foreground border z-20">
+            <div className="grid gap-4">
                 <div>
-                    <h3 className="text-sm font-medium mb-2">Location</h3>
-                    <Input
+                <h3 className="text-sm font-medium mb-2">Location</h3>
+                <Input
                     type="text"
                     placeholder="Enter a city or country"
-                    className="bg-muted border-none focus:ring-0" />
+                    value={locationFilter}
+                    onChange={handleLocationChange}
+                    className="bg-muted border-none focus:ring-0"
+                />
                 </div>
                 <div>
-                    <h3 className="text-sm font-medium mb-2">Program</h3>
-                    <Input
+                <h3 className="text-sm font-medium mb-2">Program</h3>
+                <Input
                     type="text"
                     placeholder="Enter a program name"
-                    className="bg-muted border-none focus:ring-0" />
+                    value={programFilter}
+                    onChange={handleProgramChange}
+                    className="bg-muted border-none focus:ring-0"
+                />
                 </div>
-                <div>
-                    <h3 className="text-sm font-medium mb-2">Tuition</h3>
-                    <div className="flex items-center gap-2">
-                    <Input
-                        type="number"
-                        placeholder="Min"
-                        className="bg-muted border-none focus:ring-0 w-full" />
-                    <span>-</span>
-                    <Input
-                        type="number"
-                        placeholder="Max"
-                        className="bg-muted border-none focus:ring-0 w-full" />
-                    </div>
-                </div>
-                <Button>Apply Filters</Button>
-                </div>
+                <Button type="submit" className="hover:bg-secondary">Search</Button>
+            </div>
             </DropdownMenuContent>
-            </DropdownMenu>
-            <Button className="hover:bg-secondary">Search</Button>
+        </DropdownMenu>
+        <Button className="hover:bg-secondary">Search</Button>
         </form>
         </div>
     </section>

@@ -10,7 +10,7 @@ export default function Home() {
     const [blogs, setblogs] = useState([])
 
     useEffect(() => {
-    //   fetch("http://localhost:5000/api/blogs")
+      // fetch("http://localhost:5000/api/blogs")
       fetch("https://unifind.onrender.com/api/blogs")
       .then((response) => response.json())
       .then((data) => {

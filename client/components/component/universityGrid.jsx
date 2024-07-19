@@ -29,9 +29,9 @@ function UniversityGrid({universities, title, number}) {
                       <div className="text-muted-foreground mb-2 flex">
                         <School2Icon />
                         <div className="divide-x-2 divide-primary/40">
-                          {uni.programs.map((program) => (
-                            <span className="text-muted-foreground px-2">{program.name}</span>
-                          ))}
+                        {uni.programs.map((program, index) => (
+                          <span key={index} className="text-muted-foreground px-2">{program.name}</span>
+                        ))}
                         </div>
                       </div>
                     </div>
