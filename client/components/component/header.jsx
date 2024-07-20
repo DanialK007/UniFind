@@ -1,6 +1,6 @@
 "use client";
 
-import { UniversityIcon } from 'lucide-react';
+import { CircleX, GalleryHorizontalEnd, Menu, UniversityIcon } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
@@ -46,11 +46,11 @@ function Header() {
                 <Button className="hidden md:inline-flex bg-secondary text-secondary-foreground hover:text-primary hover:bg-secondary-foreground duration-300">
                     Contact Us
                 </Button>
-                <Button onClick={toggleMenu} className="md:hidden rotate-90 text-xs px-3">
-                    |||
-                </Button>
+                <button onClick={toggleMenu} className="md:hidden px-2 rotate-180 bg-[transparent] active:scale-75 duration-300">
+                    <GalleryHorizontalEnd />
+                </button>
             </div>
-            <div className={classNames("md:hidden fixed z-40 top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-primary uppercase text-lg space-y-4 duration-300", menuOpen ? "translate-x-0" : "translate-x-full")}>
+            <div className={classNames("md:hidden fixed z-40 top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-primary/95 uppercase text-lg space-y-4 duration-300", menuOpen ? "translate-x-0 backdrop-blur-sm" : "translate-x-full backdrop-blur-none")}>
                 <Link href="/" className="block hover:text-secondary duration-300" prefetch={false} onClick={toggleMenu}>
                     Home
                 </Link>
@@ -71,7 +71,9 @@ function Header() {
                 </Button>
                 
                 <div className='fixed bottom-20 left-0 w-full flex items-center justify-center'>
-                    <Button onClick={toggleMenu} className="text-4xl font-normal rotate-45 w-12 h-12 rounded-[50px] bg-secondary/40 hover:bg-secondary/10 pt-[0.2rem]">+</Button>
+                    <button onClick={toggleMenu} className="scale-150 active:scale-100 duration-300 opacity-50">
+                        <CircleX />
+                    </button>
                 </div>
             </div>
         </header>

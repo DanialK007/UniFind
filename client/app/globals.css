@@ -6,6 +6,10 @@
     cursor: context-menu;
   }
 
+  .disable-scroll{
+    overflow: hidden;
+  }
+
   .modalImage {
     animation: zoomFadeIn 0.5s ease forwards;
   }

@@ -101,7 +101,7 @@ const universities = [
     },
     {
       id: 7,
-      name: "Myanmar International Business Academy (MIBA)",
+      name: "MIBA University",
       location: {
         city: "Yangon / Mandalay",
         country: "Myanmar"

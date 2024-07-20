@@ -18,25 +18,25 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <Link
-              href="https://www.google.com"
+              href="#"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <FacebookIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="https://www.google.com"
+              href="#"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <TwitterIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="https://www.google.com"
+              href="#"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <InstagramIcon className="w-6 h-6" />
             </Link>
             <Link
-              href="https://www.google.com"
+              href="#"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               <LinkedinIcon className="w-6 h-6" />
@@ -47,28 +47,28 @@ export function Footer() {
           <div className="grid gap-2">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <Link
-              href="#"
+              href="/"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
               Home
             </Link>
             <Link
-              href="#"
+              href="/universities"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
-              Search
+              Universities
             </Link>
             <Link
-              href="#"
+              href="/blogs"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
-              About
+              Blogs
             </Link>
             <Link
-              href="#"
+              href="/news"
               className="text-primary-foreground hover:text-secondary"
               prefetch={false}>
-              Contact
+              News
             </Link>
           </div>
           <div className="grid gap-2">

@@ -24,7 +24,7 @@ function NewsGrid({news, number, title}) {
                     {content.description}
                     </div>
                 </div>
-                <Link href="#" className="text-primary hover:underline hover:text-secondary" prefetch={false}>
+                <Link href="#" className="text-primary/70 font-semibold hover:underline hover:text-secondary" prefetch={false}>
                     Read More
                 </Link>
                 </CardContent>
